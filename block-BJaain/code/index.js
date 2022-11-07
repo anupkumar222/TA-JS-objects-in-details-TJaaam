@@ -186,7 +186,7 @@ console.log(person.print()); // Jay Person
   let name1 = person.print;
   let name2 = person.details;
 
-console.log(name1()); // undefined
+console.log(name1()); // ""
 console.log(name2.print()); // Jay Details
 
 // --------
@@ -228,18 +228,18 @@ let object = {
 
 object.double();
 // this inside of outerFn double()
-//  {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
-//  Window {0: global, window: Window, self: Window, document: document, name: '', location: Location, …}
-//  Window {0: global, window: Window, self: Window, document: document, name: '', location: Location, …}
-//  Window {0: global, window: Window, self: Window, document: document, name: '', location: Location, …}
+//  object
+//  Window 
+//  Window 
+//  Window 
 // (3) [2, 4, 6]
 object.doubleArrow();
 
 //  this inside of outerFn doubleArrow()
-//  {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
-//  {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
-//  {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
-//  {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+//  object
+//  object
+//  object
+//  object
 // (3) [2, 4, 6]
 // --------------
 
