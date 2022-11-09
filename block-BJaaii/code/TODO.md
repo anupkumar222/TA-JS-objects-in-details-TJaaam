@@ -16,12 +16,12 @@ Data:
 
 Methods:
 
-- `push`: will accept a value and add to the stack. Stack adds data at the end
-- `pop`: will delete the last element (max index) of the stack
-- `peek`: can accept and optional parameter. Will display the element at the given index(passed as argument). If nothing is passed display the last element (last index)
-- `reverse`: will reverse all the elements of the stack and return the reversed stack
+- `push`: will accept a value and add to the stack. Stack adds data at the end.
+- `pop`: will delete the last element (max index) of the stack.
+- `peek`: can accept and optional parameter. Will display the element at the given index(passed as argument). If    nothing is passed display the last element (last index).
+- `reverse`: will reverse all the elements of the stack and return the reversed stack.
 - `isEmpty`: returns `true` if the stack is empty and `false` if the stack has any data.
-- `displayStack`: returns all the data in stack in string format
+- `displayStack`: returns all the data in stack in string format.
 
 Getter
 
@@ -30,6 +30,39 @@ Getter
 #### Test
 
 ```js
+class Stack {
+    constructor() {
+        this.stack = [];
+    }
+    push(value) {
+        return this.stack.push(value);
+    }
+    pop() {
+        return this.stack.pop();
+    }
+    peek(index = this.stack.length - 1) {
+        return this.stack[index];
+    }
+    reverse() {
+        return this.stack.reverse();
+    }
+    isEmpty() {
+        if(this.stack.length === 0) {
+            return true;
+        } else {
+            return false;
+            };
+        // return !(this.stack.length > 0);
+    }
+    
+    displayStack() {
+        return this.stack.join(" ");
+    }
+    get length() {
+        return this.stack.length;
+    }
+}
+
 let myStack = new Stack();
 myStack.push('One');
 myStack.push('Two');
@@ -67,6 +100,38 @@ Getter
 #### Test
 
 ```js
+class Queue {
+    constructor() {
+        this.Queue = [];
+    }
+    enqueue(value) {
+        return this.Queue.push(value);
+    }
+    dequeue(){
+        return this.Queue.splice(0, 1);
+    }
+    peek(index = 0) {
+        return this.Queue[index];
+    }
+    reverse() {
+        return this.Queue.reverse();
+    }
+    isEmpty() {
+        if(this.Queue.length === 0) {
+            return true;
+        } else {
+            return false;
+            };
+        // return !(this.Queue.length > 0);
+    }
+    
+    displayQueue() {
+        return this.Queue.join(" ");
+    }
+    get length() {
+        return this.Queue.length;
+    }
+}
 let atmQueue = new Queue();
 atmQueue.enqueue('Aman');
 atmQueue.enqueue('John');
@@ -83,4 +148,3 @@ atmQueue.dequeue();
 atmQueue.dequeue();
 console.log(atmQueue.isEmpty()); // true
 ```
-// nvkjnn
