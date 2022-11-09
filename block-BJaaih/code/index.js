@@ -1,10 +1,18 @@
-/*
+ /*
 1. Create a function named `myMap` and add the method to `Array.prototype`.
 `myMap` will behave similar to how the `Array.map` works. To test the implementation use the code below.
 */
 
 // myMap function goes here
-
+function myMap(callback) {
+  let obj = [];
+  for(let i = 0; i < this.length; i++) {
+    let item = this[i];
+    obj.push(callback(item, i, this));
+  }
+  return obj;
+}
+Array.prototype.myMap = myMap;
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
@@ -24,11 +32,23 @@ console.log(doubleNum); // it should be [1, 9, 11, 15, 17]
 console.log(capitalWords); // it should be 'Quick Brown Fox Jumped Over A Lazy Dog'
 
 /*
-2. Add a method named `myFilter` to Array.prototype. myFilter should behave similar to Array.filter.
+2. Add a method named `myFilter` to Array.prototype.myFilter should behave similar to Array.filter.
 After adding the function test it using the code below.
 */
 
 // You code goes here
+function myFilter(callback) {
+  let obj = [];
+  for(let i = 0; i < this.length; i++) {
+    let item = this[i];
+    if(callback(item, i, this)) {
+      obj.push(item);
+    }
+   ;
+  }
+  return obj;
+}
+Array.prototype.myFilter = myFilter;
 
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
