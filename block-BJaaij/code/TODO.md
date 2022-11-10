@@ -20,16 +20,12 @@ class Book {
         this.title = title;
         this.category = category;
         this.author = author;
-        this.isRead = isRead;
-        this.finishedDate = finishedDate;
+        this.isRead = false;
+        this.finishedDate = null;
     }
     markBookAsRead(){
-        if(isRead <= 0) {
-            return isRead = true;
-        }
-        if(isRead > 1) {
-            return finishedDate = Date.now();
-        }
+         this.isRead = true;
+         this.finishedDate = Date.now();
     }
 }
 ```
@@ -49,25 +45,32 @@ class Book {
 After creating the Book and BookList class create 5 book object and add it to list. Test all the methods in Book and BookList class.
 ```js
 class BookList {
-    constructor(array, index) {
-        this.array = array;
-        this.index = index;
+    constructor() {
+        this.books = [];
+        this.currentIndexBook = 0;
     }
-    add(arr) {
-        return this.array.push(arr);
+    add(books = []) {
+         this.books = this.books.push(books);
+         return this.books;
     }
     getCurrentBook() {
-        return this.array[this.index];
+        return this.books[this.currentIndexBook];
     }
     getNextBook() {
-         return this.array[this.index + 1];
+         return this.books[this.currentIndexBook + 1];
     }
     getPrevBook() {
-        return this.array[this.index - 1];
+        return this.books[this.currentIndexBook - 1];
     }
     changeCurrentBook(i) {
-        return this.array[this.i];
+        return this.books[this.i];
     }
 }
 ```
-let bookie = new Book("sadhu", "spiritual", "chetan", 1, "today");
+let book1 = new Book("sadhu", "spiritual", "chetan",);
+let book2 = new Book("hathi", "Animal", "kumar",);
+let book3 = new Book("healty food", "lifestyle", "singh",);
+let book4 = new Book("culture", "cultural", "aggarwal",);
+let book5 = new Book("India", "geographical", "yadav",);
+let library = new BookList();
+library.add(book1, book2, book3, book4, book5);
