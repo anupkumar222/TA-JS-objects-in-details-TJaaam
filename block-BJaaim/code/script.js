@@ -106,5 +106,3 @@ let question5 = new Question("5. Where is the capital of Canada?",["Washington, 
 let root = document.querySelector(".root");
 let quizInstance = new Quiz(root, [question1, question2, question3, question4, question5]);
 quizInstance.createUI()
-
-
